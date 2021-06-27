@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Coldplay - A Sky Full Of Stars!</title>
+  </head>
+  <body>
+    <h1>Coldplay - A Sky Full Of Stars!</h1>
+
+    <script>
+      const timer = "08:00:00";
+      const aSkyFullOfStars = new Audio(
+        "https://drivemusic.me/dl/JM3L2qV9tjXf9o02T7iWXA/1616899202/download_music/2014/04/coldplay-a-sky-full-of-stars.mp3"
+      );
+      aSkyFullOfStars.addEventListener("canplaythrough", () => {
+        const timeInterval = setInterval(() => {
+          const date = new Date().toLocaleTimeString();
+          if (date === timer) {
+            clearInterval(timeInterval);
+            aSkyFullOfStars.play();
+          }
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>
